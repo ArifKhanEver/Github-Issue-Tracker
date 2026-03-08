@@ -3,9 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Github-Issue-Tracker</title>
+    <!-- daisyui -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- fonts -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+    <!-- fontawesome -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            font-family: "Geist", sans-serif;
+        }
+    </style>
 </head>
 <body>
-    Hello
+    <header>
+        <nav class="bg-base-100 shadow-sm px-4 md:px-20">
+            <div class="navbar ">
+                <div class="flex-1">
+                    <a class="btn btn-ghost text-lg md:text-2xl font-semibold"><img src="./assets/github-logo.png" alt="github-logo" height="36px" width="36px">GitHub Issues Tracker</a>
+                </div>
+                <div class="flex gap-2">
+                    <input type="text" placeholder="Search issues..." class="input input-bordered w-24 md:w-auto" />
+                    <button class="btn btn-primary hidden md:block"><i class="fa-solid fa-plus"></i> New Issue</button>
+                </div>
+            </div>
+        </nav>
+    </header>
 </body>
 </html>
