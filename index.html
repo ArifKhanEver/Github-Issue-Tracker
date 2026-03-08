@@ -3,12 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Github-Issue-Tracker</title>
+    <title>Login - Github-Issue-Tracker</title>
+    <!-- daisyui -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- fonts -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: "Geist", sans-serif;
+        }
+    </style>
 </head>
-<body>
-    
-    Hello dear!
+<body class="bg-[#F8FAFC] py-16">
+    <main class="w-11/12 md:w-[35%] bg-white m-auto p-8 rounded-md space-y-6 shadow">
+        <div class="header text-center">
+            <img class="m-auto" src="./assets/github-logo.png" alt="github-logo">
+            <h1 class="text-2xl font-semibold text-black">GitHub Issues Tracker</h1>
+            <p class="text-[#64748B]">Sign in to manage your issues</p>
+        </div>
 
-    <script src="script.js"></script>
+        <div class="form">
+            <fieldset class="fieldset w-full py-6 m-auto">
+
+                <label class="label">Username</label>
+                <input id="username" type="text" class="input w-full" placeholder="Enter Username" />
+
+                <label class="label">Password</label>
+                <input id="password" type="password" class="input w-full" placeholder="Enter Password" />
+
+                <button id="loginBtn" class="btn btn-primary mt-4">Sign In</button>
+            </fieldset>
+        </div>
+
+        <div class="text-center">
+            <p class="text-center bg-white p-4 inline">OR</p>
+            <hr class="border-gray-300  mt-[-15px]">
+        </div>
+
+        <div class="credentials text-center">
+            <h4 class="text-[#64748B] text-[14px]">Demo Credentials:</h4>
+            <div class="details p-6 bg-[#F8FAFC]">
+                <p><b>Username:</b> admin</p>
+                <p><b>Password:</b> admin123</p>
+            </div>
+        </div>
+
+    </main>
+    <script src="Script/login.js"></script>
 </body>
 </html>
