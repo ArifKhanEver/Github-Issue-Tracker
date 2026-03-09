@@ -37,10 +37,10 @@
     </header>
 
     <main class="max-w-[1200px] w-[90%] md:w-[75%] my-[60px] mx-auto flex flex-col gap-4">
-        <div class="tabs bg-white p-6 flex gap-4 shadow-sm">
-            <button class="btn btn-primary btn-sm md:btn-md w-20 md:w-24">All</button>
-            <button class="btn btn-primary btn-outline btn-sm md:btn-md w-20 md:w-24">Open</button>
-            <button class="btn btn-primary btn-outline btn-sm md:btn-md w-20 md:w-24">Closed</button>
+        <div id="tabs" class="tabs bg-white p-6 flex gap-4 shadow-sm">
+            <button onclick="activeTabs(0);" class="tabBtn btn btn-primary btn-sm md:btn-md w-20 md:w-24">All</button>
+            <button onclick="activeTabs(1);" class="tabBtn btn btn-primary btn-outline btn-sm md:btn-md w-20 md:w-24">Open</button>
+            <button onclick="activeTabs(2);" class="tabBtn btn btn-primary btn-outline btn-sm md:btn-md w-20 md:w-24">Closed</button>
         </div>
 
         <div class="issues bg-[#ffffff] shadow-sm mb-16">

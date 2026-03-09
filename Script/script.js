@@ -1,7 +1,25 @@
-async function loadIssues() {
+async function loadAllIssues() {
     const response = await fetch('https://phi-lab-server.vercel.app/api/v1/lab/issues');
     const data = await response.json();
     displayIssues(data.data);
+};
+
+async function loadOpenIssues() {
+    const response = await fetch('https://phi-lab-server.vercel.app/api/v1/lab/issues');
+    const data = await response.json();
+
+    const openIssues = data.data.filter(el=> el.status.toLowerCase().includes('open'));
+    displayIssues(openIssues);
+
+};
+
+async function loadCloseIssues() {
+    const response = await fetch('https://phi-lab-server.vercel.app/api/v1/lab/issues');
+    const data = await response.json();
+
+    const openIssues = data.data.filter(el=> el.status.toLowerCase().includes('closed'));
+    displayIssues(openIssues);
+
 };
 
 function activeLoader(status) {
@@ -10,6 +28,23 @@ function activeLoader(status) {
         loader.classList.remove('hidden');
     }else{
         loader.classList.add('hidden');
+    }
+}
+
+function activeTabs(id) {
+    const allTabBtns = document.querySelectorAll('.tabBtn');
+    
+    allTabBtns.forEach(e=>{
+        e.classList.add('btn-outline');
+    })
+
+    allTabBtns[id].classList.remove('btn-outline');
+    if(allTabBtns[id].innerText.toLowerCase() === 'open'){
+        loadOpenIssues();
+    }else if(allTabBtns[id].innerText.toLowerCase() === 'closed'){
+        loadCloseIssues();
+    }else{
+        loadAllIssues();
     }
 }
 
@@ -68,8 +103,7 @@ function displayIssues(data) {
 
 }
 
-
-loadIssues();
+loadAllIssues();
 
 // search implementation
 document.getElementById('searchField').addEventListener('input', event => {
@@ -84,6 +118,12 @@ document.getElementById('searchField').addEventListener('input', event => {
 
         })
         displayIssues(filterSearch);
+
+        // neutralize all tabs 
+        const allTabBtns = document.querySelectorAll('.tabBtn');
+        allTabBtns.forEach(e=>{
+        e.classList.add('btn-outline');
+    })
     })
 })
 
