@@ -14,12 +14,13 @@ function activeLoader(status) {
 }
 
 function displayIssues(data) {
+    const issueCards = document.getElementById('issueCards');
+    issueCards.innerHTML = "";
     activeLoader(true);
 
 
+
     data.forEach((el)=> {
-        const issueCards = document.getElementById('issueCards');
-        // issueCards.cr
 
         const cardDiv = document.createElement('div');
 
@@ -51,7 +52,7 @@ function displayIssues(data) {
                     </div>
                     <div class="space-y-1 text-right">
                         <h6 class="text-[12px] text-[#64748B]">${new Date(el.createdAt).toLocaleDateString()}</h6>
-                        <h6 class="text-[12px] text-[#64748B]">Update: ${new Date(el.updatedAt).toLocaleDateString()}</h6>
+                        <h6 class="text-[12px] text-[#64748B]">Updated: ${new Date(el.updatedAt).toLocaleDateString()}</h6>
                     </div>
                 </div>
             </div>
@@ -59,9 +60,30 @@ function displayIssues(data) {
 
         issueCards.append(cardDiv);
 
-        activeLoader(false);
     })
+    activeLoader(false);
+    
+    const issueCount = document.getElementById('issueCount');
+    issueCount.innerText = issueCards.children.length;
 
 }
 
+
 loadIssues();
+
+// search implementation
+document.getElementById('searchField').addEventListener('input', event => {
+    const searchInput = event.target.value.toLowerCase();
+    
+    fetch('https://phi-lab-server.vercel.app/api/v1/lab/issues')
+    .then(res=> res.json())
+    .then(data=> {
+        const allIssues = data.data;
+        const filterSearch = allIssues.filter(issue =>{
+            return issue.title.toLowerCase().includes(searchInput);
+
+        })
+        displayIssues(filterSearch);
+    })
+})
+

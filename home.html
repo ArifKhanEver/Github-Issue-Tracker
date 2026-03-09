@@ -29,7 +29,7 @@
                     </div>
                 </div>
                 <div class="flex gap-2">
-                    <input type="text" placeholder="Search issues..." class="input input-bordered w-full md:max-w-xs" />
+                    <input id="searchField" type="text" placeholder="Search issues..." class="input input-bordered w-full md:max-w-xs" />
                     <button class="btn btn-primary hidden md:block"><i class="fa-solid fa-plus"></i> New Issue</button>
                 </div>
             </div>
@@ -48,7 +48,7 @@
                 <div class="total flex items-center gap-2">
                     <img src="./assets/Aperture.png" alt="issueTotal">
                     <div>
-                        <h4 class="text-[20px] font-semibold">50 Issues</h4>
+                        <h4 class="text-[20px] font-semibold"><span id="issueCount">0</span> Issues</h4>
                         <p class="text-[#64748B]">Track and manage your project issues</p>
                     </div>
                 </div>
