@@ -128,7 +128,7 @@ function displayIssues(data) {
                     <h3 class="cardTitle text-[14px] font-semibold capitalize line-clamp-1">${el.title}</h3>
                     <p class="cardDsc text-[12px] text-[#64748B] mt-[-7px] line-clamp-2">${el.description}</p>
 
-                    <div class="labels flex items-center gap-2">
+                    <div class="labels flex items-center gap-2 flex-wrap">
                         <span class="bug  px-2  uppercase text-[10px] ${el.labels[0] === 'enhancement' ? 'bg-green-100 text-green-600' : el.labels[0] === 'documentation' ? 'bg-green-100 text-green-600' : 'bg-red-100 text-red-600'} rounded-full">${el.labels[0]}</span>
                         <span class="help px-2 uppercase text-[10px] ${el.labels[1] === 'enhancement' ? 'bg-green-100 text-green-600' : el.labels[1] === 'documentation' ? 'bg-green-100 text-green-600' : 'bg-orange-100 text-orange-600'} rounded-full">${el.labels.length==1?"":el.labels[1]}</span>
                     </div>
