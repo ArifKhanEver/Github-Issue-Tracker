@@ -37,13 +37,13 @@
     </header>
 
     <main class="max-w-[1200px] w-[90%] md:w-[75%] my-[60px] mx-auto flex flex-col gap-4">
-        <div id="tabs" class="tabs bg-white p-6 flex gap-4 shadow-sm">
+        <section id="tabs" class="tabs bg-white p-6 flex gap-4 shadow-sm">
             <button onclick="activeTabs(0);" class="tabBtn btn btn-primary btn-sm md:btn-md w-20 md:w-24">All</button>
             <button onclick="activeTabs(1);" class="tabBtn btn btn-primary btn-outline btn-sm md:btn-md w-20 md:w-24">Open</button>
             <button onclick="activeTabs(2);" class="tabBtn btn btn-primary btn-outline btn-sm md:btn-md w-20 md:w-24">Closed</button>
-        </div>
+        </section>
 
-        <div class="issues bg-[#ffffff] shadow-sm mb-16">
+        <section class="issues bg-[#ffffff] shadow-sm mb-16">
             <div class="issueTotal flex justify-between p-6">
                 <div class="total flex items-center gap-2">
                     <img src="./assets/Aperture.png" alt="issueTotal">
@@ -98,7 +98,47 @@
                 </div> -->
 
             </div>
-        </div>
+        </section>
+
+        <section id="modalPop">
+            <!-- Open the modal using ID.showModal() method -->
+            <!-- <dialog id="my_modal" class="modal modal-bottom sm:modal-middle">
+                <div class="modal-box space-y-4">
+                    <div class="heading">
+                        <h2 class="text-[24px] font-bold">Fix broken image uploads</h2>
+                        <div>
+                            <span class="priority px-5 py-1 text-[12px] bg-green-100 text-green-500 rounded-full">Open</span><span class="py-1 text-[12px] text-[#64748B]"> • Opened by Fahim Ahmed • 22/02/2026</span>
+
+                        </div>
+                    </div>
+
+                    <div class="labels flex items-center gap-2">
+                        <p class="bug  px-2  uppercase text-[12px] bg-red-100 text-red-500 rounded-full">Bug</p>
+                        <p class="help px-2 uppercase text-[12px] bg-orange-100 text-orange-400 rounded-full">Help Wanted</p>
+                    </div>
+
+                    <div class="des">
+                        <p class="cardDsc text-[16px] text-[#64748B] mt-[-7px]">The navigation menu doesn't collapse properly on mobile devices...</p>
+                    </div>
+
+                    <div class="author bg-gray-100 p-5 rounded-lg grid grid-cols-2">
+                        <div class="name">
+                            <p class="text-gray-500 mb-1">Assignee:</p>
+                            <h6>Fahim Ahmed</h6>
+                        </div>
+                        <div class="priority text-left">
+                            <p class="text-gray-500 mb-1">Priority:</p>
+                            <span class="priority px-5 py-1 uppercase text-[12px] bg-red-100 text-red-500 rounded-full">High</span>
+                        </div>
+                    </div>
+
+                    <form method="dialog" class="flex justify-end">
+                        <button class="btn btn-primary">Close</button>
+                    </form>
+                    </div>
+                </div>
+            </dialog> -->
+        </section>
     </main>
 
     <script src="Script/script.js"></script>
