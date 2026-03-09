@@ -40,10 +40,13 @@ function activeTabs(id) {
 
     allTabBtns[id].classList.remove('btn-outline');
     if(allTabBtns[id].innerText.toLowerCase() === 'open'){
+        document.getElementById('searchField').value = "";
         loadOpenIssues();
     }else if(allTabBtns[id].innerText.toLowerCase() === 'closed'){
+        document.getElementById('searchField').value = "";
         loadCloseIssues();
     }else{
+        document.getElementById('searchField').value = "";
         loadAllIssues();
     }
 }
@@ -58,7 +61,7 @@ async function loadModal(id){
         <dialog id="my_modal" class="modal modal-bottom sm:modal-middle">
             <div class="modal-box space-y-4">
                 <div class="heading">
-                    <h2 class="text-[24px] font-bold">${data.data.title}</h2>
+                    <h2 class="text-[20px] font-bold">${data.data.title}</h2>
                     <div>
                         <span class="priority px-5 py-1 text-[12px] ${data.data.status === "open"? "bg-green-100 text-green-500": "bg-purple-200 text-purple-500"} rounded-full">${data.data.status}</span><span class="py-1 text-[12px] text-[#64748B]"> • Opened by ${data.data.author} • ${new Date(data.data.createdAt).toLocaleDateString()}</span>
 
@@ -67,7 +70,7 @@ async function loadModal(id){
 
                 <div class="labels flex items-center gap-2">
                     <p class="bug  px-2  uppercase text-[12px] ${data.data.labels[0] === 'enhancement' ? 'bg-green-100 text-green-600' : data.data.labels[0] === 'documentation' ? 'bg-green-100 text-green-600' : 'bg-red-100 text-red-600'} rounded-full">${data.data.labels[0]}</p>
-                    <p class="help px-2 uppercase text-[12px] ${data.data.labels[1] === 'enhancement' ? 'bg-green-100 text-green-600' : data.data.labels[1] === 'documentation' ? 'bg-green-100 text-green-600' : 'bg-red-100 text-red-600'} rounded-full">${data.data.labels[1]}</p>
+                    <p class="help px-2 uppercase text-[12px] ${data.data.labels[1] === 'enhancement' ? 'bg-green-100 text-green-600' : data.data.labels[1] === 'documentation' ? 'bg-green-100 text-green-600' : 'bg-orange-100 text-orange-600'} rounded-full">${data.data.labels[1]}</p>
                 </div>
 
                 <div class="des">
